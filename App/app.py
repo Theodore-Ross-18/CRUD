@@ -110,3 +110,7 @@ def not_found(error):
 def internal_error(error):
     db.session.rollback()
     return render_template('500.html'), 500
+
+# Run: Flask Application
+if __name__=='__main__':
+    app.run(debug=True)
