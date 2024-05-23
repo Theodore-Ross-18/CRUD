@@ -66,25 +66,23 @@ def create_user():
         return jsonify({'error': f'Error creating user: {str(e)}'}), 500
 
 # Route: UPDATE
-@main.route('/users', methods=['POST'])
-def create_user():
+@main.route('/users/<int:id>', methods=['PUT'])
+def update_user(id):
+    user = User.query.get_or_404(id)
     data = request.get_json()
     username = data.get('username')
     email = data.get('email')
     if not username or not email:
         return jsonify({'error': 'Username and email are required!'}), 400
 
-    if User.query.filter_by(username=username).first() or User.query.filter_by(email=email).first():
-        return jsonify({'error': 'Username or email already exists!'}), 400
-
-    new_user = User(username=username, email=email)
+    user.username = username
+    user.email = email
     try:
-        db.session.add(new_user)
         db.session.commit()
-        return jsonify({'message': 'User created successfully!', 'user': {'id': new_user.id, 'username': new_user.username, 'email': new_user.email}}), 201
+        return jsonify({'message': 'User updated successfully!', 'user': {'id': user.id, 'username': user.username, 'email': user.email}}), 200
     except Exception as e:
         db.session.rollback()
-        return jsonify({'error': f'Error creating user: {str(e)}'}), 500
+        return jsonify({'error': f'Error updating user: {str(e)}'}), 500
 
 # Route: DELETE
 @main.route('/users/<int:id>', methods=['DELETE'])
