@@ -2,7 +2,7 @@
 
 # Importing: Modules
 import os # Environment Variables
-from flask import Flask # Web Handling
+from flask import Flask, Blueprint # Web Handling
 from flask_sqlalchemy import SQLAlchemy # Database Interactions
 
 # Initializing: Flask App
@@ -29,3 +29,6 @@ class User(db.Model):
 # Create: tables in the DB (If: Not exist)
 with app.app_context():
     db.create_all()
+
+# Main Routes: Blueprint
+main = Blueprint('main', __name__)
