@@ -198,6 +198,26 @@
                     });
                 });
             });
+
+            document.getElementById('searchForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const userId = document.getElementById('searchId').value;
+
+            if (!userId) {
+                alert('Please enter a user ID.');
+                return;
+            }
+
+            sendRequest('/search', 'POST', { id: userId }, function (response) {
+                if (response.user) {
+                    alert(`User found!\nID: ${response.user.id}\nUsername: ${response.user.username}\nEmail: ${response.user.email}`);
+                } else {
+                    alert(response.message);
+                }
+            }, function (response) {
+                alert(response.error);
+            });
+        });
             
             document.querySelectorAll('.deleteUserButton').forEach(button => {
                 button.addEventListener('click', function () {
