@@ -26,3 +26,6 @@ class User(db.Model):
     def __repr__(self):
         return f'<User {self.username}>'
 
+# Create: tables in the DB (If: Not exist)
+with app.app_context():
+    db.create_all()
