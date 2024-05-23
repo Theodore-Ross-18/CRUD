@@ -63,4 +63,25 @@ def create_user():
         return jsonify({'message': 'User created successfully!', 'user': {'id': new_user.id, 'username': new_user.username, 'email': new_user.email}}), 201
     except Exception as e:
         db.session.rollback()
-        return jsonify({'error': f'Error creating user: {str(e)}'}), 5
+        return jsonify({'error': f'Error creating user: {str(e)}'}), 500
+
+# Route: UPDATE
+@main.route('/users', methods=['POST'])
+def create_user():
+    data = request.get_json()
+    username = data.get('username')
+    email = data.get('email')
+    if not username or not email:
+        return jsonify({'error': 'Username and email are required!'}), 400
+
+    if User.query.filter_by(username=username).first() or User.query.filter_by(email=email).first():
+        return jsonify({'error': 'Username or email already exists!'}), 400
+
+    new_user = User(username=username, email=email)
+    try:
+        db.session.add(new_user)
+        db.session.commit()
+        return jsonify({'message': 'User created successfully!', 'user': {'id': new_user.id, 'username': new_user.username, 'email': new_user.email}}), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'error': f'Error creating user: {str(e)}'}), 500
