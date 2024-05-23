@@ -2,7 +2,7 @@
 
 # Importing: Modules
 import os # Environment Variables
-from flask import Flask, Blueprint # Web Handling
+from flask import Flask, Blueprint, render_template # Web Handling
 from flask_sqlalchemy import SQLAlchemy # Database Interactions
 
 # Initializing: Flask App
@@ -37,3 +37,9 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def bonjour():
     return 'Bonjour le monde'
+
+# Route: Show Users
+@main.route('/users')
+def show_users():
+    users = User.query.all()
+    return render_template('users.html', users=users)
