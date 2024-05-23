@@ -162,7 +162,20 @@
                 xhr.send(JSON.stringify(data));
             }
 
-            
+            document.getElementById('createUserForm').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const username = document.getElementById('createUsername').value;
+                const email = document.getElementById('createEmail').value;
+
+                sendRequest('/users', 'POST', { username, email }, function (response) {
+                    alert(response.message);
+                    location.reload();
+                }, function (response) {
+                    alert(response.error);
+                });
+            });
+
+
         });
 </script>
 </head>
