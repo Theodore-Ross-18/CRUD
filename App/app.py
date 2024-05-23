@@ -44,6 +44,22 @@ def show_users():
     users = User.query.all()
     return render_template('users.html', users=users)
 
+# Route: Search Users (By ID)
+@main.route('/search', methods=['POST'])
+def search_user_by_id():
+    data = request.get_json()
+    user_id = data.get('id')
+
+    if not user_id:
+        return jsonify({'error': 'Please provide a user ID to search for.'}), 400
+
+    user = User.query.get(user_id)
+
+    if not user:
+        return jsonify({'message': f'No user found with ID {user_id}.'}), 404
+
+    return jsonify({'user': {'id': user.id, 'username': user.username, 'email': user.email}}), 200
+
 # Route: CREATE
 @main.route('/users', methods=['POST'])
 def create_user():
