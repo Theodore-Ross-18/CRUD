@@ -32,3 +32,8 @@ with app.app_context():
 
 # Main Routes: Blueprint
 main = Blueprint('main', __name__)
+
+# Testing: Simple Route
+@main.route('/')
+def bonjour():
+    return 'Bonjour le monde'
