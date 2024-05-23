@@ -145,7 +145,25 @@
 
 <!-- Content Functionality -->
 <script>
+    document.addEventListener('DOMContentLoaded', function () {
+            function sendRequest(url, method, data, successCallback, errorCallback) {
+                const xhr = new XMLHttpRequest();
+                xhr.open(method, url, true);
+                xhr.setRequestHeader('Content-Type', 'application/json');
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4) {
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            successCallback(JSON.parse(xhr.responseText));
+                        } else {
+                            errorCallback(JSON.parse(xhr.responseText));
+                        }
+                    }
+                };
+                xhr.send(JSON.stringify(data));
+            }
 
+            
+        });
 </script>
 </head>
 </html>
