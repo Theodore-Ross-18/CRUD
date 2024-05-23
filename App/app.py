@@ -98,3 +98,6 @@ def delete_user(id):
         db.session.rollback()
         return jsonify({'error': f'Error deleting user: {str(e)}'}), 500
 
+# Register: Blueprint
+app.register_blueprint(main)
+
