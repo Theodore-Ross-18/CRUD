@@ -85,3 +85,16 @@ def create_user():
     except Exception as e:
         db.session.rollback()
         return jsonify({'error': f'Error creating user: {str(e)}'}), 500
+
+# Route: DELETE
+@main.route('/users/<int:id>', methods=['DELETE'])
+def delete_user(id):
+    user = User.query.get_or_404(id)
+    try:
+        db.session.delete(user)
+        db.session.commit()
+        return jsonify({'message': 'User deleted successfully!'}), 200
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'error': f'Error deleting user: {str(e)}'}), 500
+
