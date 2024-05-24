@@ -16,6 +16,11 @@ Building a CRUD REST API with MySQL, Testing, and XML/JSON Output
 
 > 1. `Setup your database`: It will be assumed that you’ve installed a MySQL server with your chosen database in your system, make sure it contains enough (20 records and above) for testing.
 
+MySQL Workbench: 
+
+    Database Name: flask_db
+    Table Name: users
+
 > 2. Create a new `GitHub repository` for your project. Make sure to select the option to initialize the repository with a README file, write down the installation procedures of your project here once you’re done. Clone the repository to your local development environment.
 
 > 3. `Create a virtual environment` for your project, and ignore it in your. gitignore file and go into the virtual environment, do not include the environment when you upload your project in Github.
