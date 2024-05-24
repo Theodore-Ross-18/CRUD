@@ -4,6 +4,14 @@ Building a CRUD REST API with MySQL, Testing, and XML/JSON Output
 
 > A CRUD (Create, Read, Update, and Delete) REST API for your chosen MySQL database similar to the Python Flask API Programming. The API will allow users to interact with the database and will act as an Interface to any client that understands JSON or XML. You will also set up tests to ensure the functionality of the API, and provide the option to format the API output as XML or JSON.
 
+# What is REST API?
+
+> A REST API, or Representational State Transfer API, is a set of rules and conventions for building web services. It allows different software applications to communicate with each other over the internet.
+
+> At its core, a REST API works by defining a set of endpoints (URLs) that represent various resources (such as users, products, or data). Each endpoint corresponds to a specific action, such as retrieving data (GET), creating new data (POST), updating existing data (PUT or PATCH), or deleting data (DELETE).
+
+> The main purpose of using a REST API is to enable interoperability between different systems and platforms. It provides a standardized way for applications to exchange data regardless of their underlying technologies. REST APIs are widely used because they are simple, scalable, and can leverage the existing infrastructure of the World Wide Web, including HTTP protocols and data formats like JSON or XML.
+
 # Instructions:
 
 > 1. `Setup your database`: It will be assumed that you’ve installed a MySQL server with your chosen database in your system, make sure it contains enough (20 records and above) for testing.
