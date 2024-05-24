@@ -34,6 +34,22 @@ MySQL Workbench:
 
 > 4. Install `libraries` needed for this project
 
+Directory: Inside the VENV CMD (Command Line Interface)
+
+Note: Active the VENV first before installing
+
+1. Flask
+
+        pip install Flask
+
+2. Flask-Restful
+
+        pip install Flask-Restful
+
+3. Flask-SQLAlchemy
+
+        pip install Flask-SQLAlchemy
+
 > 5. Develop your `Flask REST API Web Application`.
 
 # Grading Breakdown:
