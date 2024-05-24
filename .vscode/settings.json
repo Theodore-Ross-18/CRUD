@@ -3,6 +3,7 @@
         "jsonify",
         "pymysql",
         "sqlalchemy",
-        "supersecretkey"
+        "supersecretkey",
+        "Venv"
     ]
 }

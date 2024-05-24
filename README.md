@@ -23,6 +23,8 @@ MySQL Workbench:
 
 > 2. Create a new `GitHub repository` for your project. Make sure to select the option to initialize the repository with a README file, write down the installation procedures of your project here once you’re done. Clone the repository to your local development environment.
 
+    https://github.com/Theodore-Ross-18/CRUD
+
 > 3. `Create a virtual environment` for your project, and ignore it in your. gitignore file and go into the virtual environment, do not include the environment when you upload your project in Github.
 
 > 4. Install `libraries` needed for this project
