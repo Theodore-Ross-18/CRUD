@@ -27,6 +27,11 @@ MySQL Workbench:
 
 > 3. `Create a virtual environment` for your project, and ignore it in your. gitignore file and go into the virtual environment, do not include the environment when you upload your project in Github.
 
+    Venv File Name: CRUD
+    gitignore: CRUD/
+
+    Purpose: To not include or ignore the libraries installed in the repository and lessen the file size of the project
+
 > 4. Install `libraries` needed for this project
 
 > 5. Develop your `Flask REST API Web Application`.
