@@ -6,8 +6,7 @@ Building a CRUD REST API with MySQL, Testing, and XML/JSON Output
 
 # Instructions:
 
-> 1. `Setup your database`: It will be assumed that you’ve installed a MySQL server with your chosen database in your system, make
-sure it contains enough (20 records and above) for testing.
+> 1. `Setup your database`: It will be assumed that you’ve installed a MySQL server with your chosen database in your system, make sure it contains enough (20 records and above) for testing.
 
 > 2. Create a new `GitHub repository` for your project. Make sure to select the option to initialize the repository with a README file, write down the installation procedures of your project here once you’re done. Clone the repository to your local development environment.
 
